@@ -1,0 +1,87 @@
+{
+    "locations": [
+        {
+            "id" : 1,
+              "name":"Test Home1",
+              "city":"Hyderabad",
+              "state":"ST1",
+              "photo": " /assets/images/home1.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry": false
+          },
+          {
+            "id"  : 2,
+            "name":"Test Home2",
+            "city":"Bangalore",
+            "state":"ST2",
+             "photo": " /assets/images/home2.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 3,
+            "name":"Test Home3",
+            "city":"Hyderabad",
+            "state":"ST3",
+             "photo": " /assets/images/home3.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 4,
+            "name":"Test Home4",
+            "city":"Bangalore",
+            "state":"ST4",
+             "photo": " /assets/images/home4.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 5,
+            "name":"Test Home5",
+            "city":"Kolkata",
+            "state":"ST5",
+             "photo": " /assets/images/home5.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 6,
+            "name":"Test Home6",
+            "city":"Hyderabad",
+            "state":"ST",
+             "photo": " /assets/images/home6.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 7,
+            "name":"Test Home7",
+            "city":"Bangalore",
+            "state":"ST7",
+             "photo": " /assets/images/home7.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 8,
+            "name":"Test Home8",
+            "city":"Hyderabad",
+            "state":"ST8",
+             "photo": " /assets/images/home8.jpg" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          },{
+            "id"  : 9,
+            "name":"Test Home9",
+            "city":"Kolkata",
+            "state":"ST9",
+             "photo": " /assets/images/home9.webp" ,
+              "availableUnits": 99 ,
+              "wifi":true,
+              "laundry" : false
+          }
+    ]
+}

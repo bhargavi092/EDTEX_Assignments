@@ -1,0 +1,24 @@
+.even{
+    background-color:  rgb(214, 221, 226);
+}
+.odd{
+    background-color:aliceblue
+}
+.table{
+    text-align: center;
+}
+td,th{
+    padding: 1%;
+}
+#reason{
+    width: 30%;
+    max-width: fit-content;
+}
+#message{
+    margin-top:5%;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: x-large;
+    color:rgb(91,91,91);
+}

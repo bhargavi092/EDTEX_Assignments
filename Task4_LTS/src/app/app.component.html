@@ -1,0 +1,21 @@
+<nav>
+  <p id="title1">EDTEX <sup><small style="font-size: 15px;">Internal</small></sup></p>
+  <div class="headings">
+    <p id="heading">LTS</p>
+    <div class="login-register" *ngIf="!currentUser.name.length">
+      <a routerLink="login">Login</a>
+      <a routerLink="register">Register</a>
+    </div>
+    <div class="btn-group" dropdown *ngIf="currentUser.name.length">
+      <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+              aria-controls="dropdown-basic">
+              <fa-icon [icon]="userIcon"></fa-icon> {{ currentUser.name | titlecase }}
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem" ><p (click)="logout()">Logout</p></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

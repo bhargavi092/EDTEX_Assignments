@@ -1,0 +1,13 @@
+<div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+        <p id="title">Login</p>
+        <p *ngIf="displayMessage" id="error-message">{{message}}</p>
+        <input type="text" name="email" placeholder="Email" class="form-control" [(ngModel)]="currentUser.email" required pattern="^[a-z0-9+._-]+@[a-z]+[.][a-z]{2,3}" #email="ngModel">
+        <p *ngIf="email.errors?.['required'] && email.dirty" class="error-message">Email is Required</p>
+        <p *ngIf="email.errors?.['pattern'] && email.touched" class="error-message">Email is Incorrect</p>
+        <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="currentUser.password" required #password="ngModel" minlength="6">
+        <p *ngIf="password.errors?.['required'] && password.dirty" class="error-message">Password is Required</p>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-secondary">Login</button>
+        <p>Don't have an Account ? <a routerLink="/register">Register</a></p>
+    </form>
+</div>

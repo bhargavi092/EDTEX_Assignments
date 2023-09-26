@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+.viewpatrons-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(135, 139, 143);
+    height: 90% ;
+    position: relative;
+    margin: 2%;
+    overflow-y: auto;
+    box-shadow: 1px 1px 7px;
+    
+}
+.viewpatrons-heading{
+    position: relative;
+    height: 20%;
+    color: white;
+    background-color: rgb(7, 73, 139);
+    padding-top: 1.5%;
+    text-align: center;
+    justify-content: center;
+}
+.search{
+    display: flex;
+    position: relative;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 1% ;
+}
+
+.btns{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+.search input{
+    margin-top: 1%;
+    margin-right: 1%;
+    padding: 0.5% 0.5%;
+    width: 70%;
+}
+.search label{
+    margin-top: 1%;
+    margin-right: 1%;
+}
+.btn{
+    background-color:rgb(7, 73, 139) ;
+}
+.tableClass{
+    /* border: 2px solid yellow; */
+    height: 100%;
+    padding: 1% 5% ;
+    overflow-y: auto;
+
+}
+.patrons-table{
+    width: 100%;
+    margin-top: 1%;
+    box-sizing: border-box;
+    /* border: 2px solid green; */
+    overflow: auto;
+}
+
+
+th {
+    background-color: rgb(7, 73, 139);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+tr:nth-child(even){
+    background-color:rgb(242, 242, 242);
+}
+
+th , td {
+    padding: 0.5% 1%;
+}
+@media screen and (max-width:740px) {
+    .searchField{
+        width: 50%;
+    
+    }
+    .btns{
+        width: 50%;
+    }
+}
+@media screen and (max-width:480px) {
+    .search{
+        flex-direction: column;
+        height: 35% ;
+    }
+    .searchField{
+        width: 100%;
+    
+    }
+    .btns{
+        width: 100%;
+        padding: 1%;
+    }
+}

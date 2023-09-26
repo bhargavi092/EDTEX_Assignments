@@ -1,0 +1,38 @@
+.even{
+    background-color: rgb(238, 238, 238)
+}
+.odd{
+    background-color: white;
+}
+.table{
+    text-align: center;
+    margin-top: 2%;
+}
+#welcome{
+    text-align: center;
+    font-weight: 400;
+    font-size: 120%;
+    margin-top: 3%;
+    color: rgb(91, 91, 91);
+}
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(241, 245, 251);
+    width: 25%;
+    aspect-ratio: 3/2.5;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: 300;
+    color: rgb(87, 87, 87);
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 77vh;
+    row-gap: 10%;
+}

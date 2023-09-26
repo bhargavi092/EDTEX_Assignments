@@ -1,0 +1,43 @@
+<main>
+    <nav class="navBar">
+        <h2 >Library Management System</h2>
+    </nav>
+    <div class="container">
+        <div class="login-container">
+            <div class="container-header">Log in</div>
+            <div class="login-buttons">
+                <button type="button" class="btn btn-primary l" [routerLink]="['/']" >Librarian</button>
+                <button type="button" class="btn btn-primary" [routerLink]="['/patronlogin']">Patron</button>
+            </div>
+            <div class="formDiv">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div  *ngIf="loginClicked && (loginForm.controls['username'].hasError('required') || loginForm.controls['password'].hasError('required')) " class="error">Invalid login or password . Please try again!</div>
+                    <div class="form-group ">
+                        
+                        <input type="text" formControlName="username" placeholder="Librarian username " class="form-control">
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="password" formControlName="password" placeholder="Librarian password" class="form-control">
+                    </div>
+                    <div class="float">
+                        <div class="forgot">
+                            <a [routerLink]="['/librarian-registration']" >Register</a>
+                        </div>
+                        
+                        <div>
+                            <input type="submit" value="Log in" class="btn btn-primary login-btn"  >
+
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <div >
+
+        </div>
+        
+    </div>
+</main>
+  

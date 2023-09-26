@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 700px;
+            /* border: 1px solid blue; */
+            background-color: #fbf7f7;
+            border: 1px solid #c0b2b2;
+            box-shadow: 0px 0px 3px #b7abab;
+            border-radius: 10px;
+        }
+        .heading{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border: 1px solid #ded8d8;
+            /* background-color: #B1A6A4; */
+            background-color: #dbcfcc;
+            
+            box-shadow: 1px 2px 5px #7a7676;
+            border-radius: 10px;
+        }
+        
+        .adding{
+            margin: 5% 4%;
+            display: flex;
+            justify-content: center;
+            /* width: 95%; */
+            box-sizing: border-box;
+            flex-direction: row;
+        }
+
+        input{
+            width: 71%;
+            padding: 1.5%;
+            outline: none;
+            /* border-radius: 10px; */
+        }
+        .add{
+            margin-left: 2%;
+            /* background-color:#cfc9c7 ; */
+            width: 20%;
+            cursor: pointer;
+            /* border-radius: 10px; */
+        }
+
+        .listContainer{
+            margin: 0% 5% 0% 0%;
+            counter-reset: list-item;
+            
+        }
+        
+        
+        ol li{
+            list-style-type: none;
+            font-size: 17px;
+            padding: 2% 8%;
+            margin-bottom: 0.5%;
+            /* padding: 12px 8px 12px 80px; */
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            border-radius: 10px;
+            counter-increment: list-item;
+            
+        }
+
+        ol li:nth-child(odd){
+            /* background-color: #c8bcba ; */
+            background-color: #dbcfcc;
+
+        }
+        ol li:nth-child(even){
+            /* background-color: #dbcdcdf2 ; */
+            background-color: #ece0dd;
+
+        }
+        
+        ol li::before{
+            content: counter(list-item) ' . ';
+        }
+
+        ol li.checked{
+            color: #555;
+            text-decoration: line-through;
+            
+        }
+        
+        ol li #done{
+            position: absolute;
+            top: 15%;
+            left: 82%;
+            font-size: 20px;
+            font-weight: bolder;
+            padding: 1% 1.2%;
+            border-radius: 50%;
+            color: blue;
+            background-color: white;
+            box-shadow: 2px 1px 2px black;
+        }
+
+        ol li #trash{
+            position: absolute;
+            top: 15%;
+            left: 90%;
+            font-size: 20px;
+            font-weight: bolder;
+            padding: 1% 1.5%;
+            border-radius: 50%;
+            color: red;
+            background-color: #fbf7f7;
+            box-shadow: 2px 1px 2px black;       
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="heading"><h1>To Do List</h1></div>
+    
+            <div class="adding">
+                <input type="text" placeholder="Add item here..." id="inputField" onclick="return inputFocus()">
+                <button class="add" onclick="addTask()">ADD</button>
+            </div>
+            <div class="listContainer">
+                <span style="justify-content: left; margin-left: 7%; font-size: 25px; font-weight: bold;">Tasks</span>
+                <span style="float: right; margin-right: 2%; font-size: 25px; font-weight: bold;">Count: <b id="taskCount"></b></span>
+
+                <ol id="listItems">
+                     
+                     <li class="checked">First Task <i class="fa fa-check" aria-hidden="true" id="done"></i>
+                        <i class="fa fa-trash" aria-hidden="true" id="trash"></i></li> 
+
+                   
+                </ol>
+            </div>
+
+        
+        
+    </div>
+   
+    <script src="script.js"></script>
+
+</body>
+</html>

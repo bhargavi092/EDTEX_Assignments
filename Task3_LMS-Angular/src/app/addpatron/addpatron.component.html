@@ -1,0 +1,52 @@
+<!-- <main>
+   
+    <nav class="navBar">
+      <div class="toggler" (click)="toggleSideNav = !toggleSideNav"><h3>&#9776;</h3></div>
+      
+        <h2 >Library Management System</h2>
+      
+      <div class="user">
+        <span>{{username}}</span><i class='fa fa-user-circle userIcon' (click)="toggleLogoutDropdown()"></i>
+        <div class="logout-dropdown" *ngIf="showLogoutDropdown">
+          <a (click)="logout()">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <div class="b-container">
+      <div class="side-nav" [class.open]="toggleSideNav">
+        <a [routerLink]="['/viewbook']" [queryParams]="{ userType: userType ,username:username }"> Books</a>
+        <a [routerLink]="['/viewpatron']" [queryParams]="{ userType: userType ,username:username }"> Patrons</a>
+        
+      </div>
+      <div class="content"> 
+        <div class="container">
+            <div class="row">
+                <div class="form_bg">
+                    <h4>Add Patron</h4>
+                    <form [formGroup]="addPatronForm" (ngSubmit)="addPatron()">
+        
+                        
+                        <div class="form-group">
+                            <input type="text" formControlName="pname" placeholder="Name">
+                            <span  *ngIf="addPatronForm.controls['pname'].hasError('required') && addPatronForm.controls['pname'].touched" class="error">Patron Name  required!</span>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit" value="Add Patron" class="btn btn-primary" [disabled]="!addPatronForm.valid">
+                        </div>
+                        <div>
+                          <button class="btn btn-primary" [routerLink]="['/viewbook']" [queryParams]="{ userType: userType ,username:username }">View Books</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="img">
+              <img src="/assets/book.jpg">
+            </div>
+        </div>
+      </div>
+    </div>
+    </main>
+
+
+ -->

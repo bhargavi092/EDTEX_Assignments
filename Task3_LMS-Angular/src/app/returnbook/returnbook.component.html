@@ -1,0 +1,56 @@
+<main>
+   
+    <nav class="navBar">
+      <div class="toggler" (click)="toggleSideNav = !toggleSideNav"><h3>&#9776;</h3></div>
+      
+        <h2 >Library Management System</h2>
+      
+      <div class="user">
+        <span>{{username}}</span><i class='fa fa-user-circle userIcon' (click)="toggleLogoutDropdown()"></i>
+        <div class="logout-dropdown" *ngIf="showLogoutDropdown">
+          <a (click)="logout()">Logout</a>
+          <a [routerLink]="['/editprofile']" [queryParams]="{ userType: userType , username:username}">Edit Profile</a>
+
+        </div>
+      </div>
+    </nav>
+    <div class="b-container">
+      <div class="side-nav" [class.open]="toggleSideNav">
+        <a [routerLink]="['/viewbook']" [queryParams]="{ userType: userType ,username:username }"> Books</a>
+        <a [routerLink]="['/viewpatron']" [queryParams]="{ userType: userType ,username:username }"> Patrons</a>
+        
+      </div>
+      <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="form_bg">
+                    <h4>Return Book</h4>
+                    <form [formGroup]="returnForm" (ngSubmit)="returnBook()">
+        
+                        <div class="form-group">
+                            <input type="number" formControlName="pid" placeholder="Patron Id">
+                            <span  *ngIf="returnForm.controls['pid'].hasError('required') && returnForm.controls['pid'].touched" class="error">Patron id is required!</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" formControlName="isbn" placeholder="Book Id">
+                            <span  *ngIf="returnForm.controls['isbn'].hasError('required') && returnForm.controls['isbn'].touched" class="error">Book ISBN is required!</span>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit" value="Return Book" class="btn btn-primary" [disabled]="!returnForm.valid">
+                        </div>
+                        <div>
+                          <button class="btn btn-primary" [routerLink]="['/viewbook']" [queryParams]="{ userType: userType ,username:username }">View Books</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="img">
+              <img src="/assets/book.jpg">
+            </div>
+        </div>
+        
+      </div>
+    </div>
+    </main>
+

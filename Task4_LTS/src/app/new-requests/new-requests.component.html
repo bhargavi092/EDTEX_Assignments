@@ -1,0 +1,49 @@
+<div class="container">
+  <p *ngIf="!pendingLeaves.length" id="message">No Data</p>
+  <table *ngIf="pendingLeaves.length" class="table">
+    <tr>
+      <th>Employee Name</th>
+      <th>Leave Type</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Reason</th>
+      <th>Action</th>
+    </tr>
+    <tr
+      [ngClass]="e ? 'even' : 'odd'"
+      *ngFor="let leave of pendingLeaves; let e = even; let o = odd"
+    >
+      <td>{{ leave.name | titlecase }}</td>
+      <td>{{ leave.type | titlecase }}</td>
+      <td>{{ leave.startDate | date : "medium" }}</td>
+      <td>{{ leave.endDate | date : "medium" }}</td>
+      <td id="reason">{{ leave.reason ? leave.reason : "-" }}</td>
+      <td>
+        <button (click)="showModal(true,leave.id)">
+          <fa-icon [icon]="acceptIcon" id="accept"></fa-icon>
+        </button>
+       
+        <button (click)="showModal(false,leave.id)">
+          <fa-icon [icon]="rejectIcon" id="reject"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<nz-modal
+[(nzVisible)]="isVisible"
+nzTitle="Message for Employee"
+(nzOnCancel)="handleCancel()"
+(nzOnOk)="handleOk()"
+>
+<ng-container *nzModalContent>
+  <input
+    nz-input
+    type="text"
+    placeholder="Message"
+    [(ngModel)]="managerMessage"
+    name="managerMessage"
+  />
+</ng-container>
+</nz-modal>

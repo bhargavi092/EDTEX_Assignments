@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~ng-zorro-antd/ng-zorro-antd.min.css"; */
+/* @import "~ng-zorro-antd/style/index.min.css"; Import base styles */
+
+.ng-invalid[required]{
+    border-left: 5px solid darkred;
+    border-radius: 4px 2px 2px 4px;
+}
+.ng-valid[required]{
+    border-left: 5px solid darkgreen;
+    border-radius: 4px 2px 2px 4px;
+}
+body{
+    background-color: aliceblue;
+}

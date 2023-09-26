@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+}
+.navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(5, 56, 107);
+    color: white;
+    padding: 0% 5%;
+    height: 15%;
+}
+.container{
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container{
+    box-shadow: 1px 1px 7px;
+    width: 50%;
+    
+}
+.container-header {
+    text-align: center;
+    background-color: rgb(7, 73, 139);
+    color: white;
+    padding: 1% 0%;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.login-buttons{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.login-buttons .btn{
+    width: 50%;
+    background-color: white;
+    color: rgb(7, 73, 139) ;
+    box-shadow: 1px 1px 5px;
+}
+
+.login-buttons .p{
+    background-color: rgb(229, 239, 248);
+}
+
+.formDiv{
+    padding: 5%;
+}
+.form-group{
+    margin-bottom: 3%;
+}
+.forgot {
+    margin-bottom: 3%;
+}
+.login-btn{
+    background-color: rgb(7, 73, 139);
+    
+}
+.float{
+    /* border: 1px solid green; */
+    text-align: right;
+}
+.error{
+    color: red;
+    padding-bottom: 3%;
+}

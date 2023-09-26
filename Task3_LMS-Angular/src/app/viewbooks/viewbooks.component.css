@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+.viewbooks-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(135, 139, 143);
+    height: 90% ;
+    position: relative;
+    margin: 2%;
+    overflow-y: auto;
+    box-shadow: 1px 1px 7px;
+    
+}
+.viewbooks-heading{
+    position: relative;
+    height: 20%;
+    color: white;
+    background-color: rgb(7, 73, 139);
+    padding-top: 1.5%;
+    text-align: center;
+    justify-content: center;
+}
+.search{
+    display: flex;
+    position: relative;
+    height: 15%;
+    /* border: 1px solid palevioletred; */
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0% 1%;
+}
+.searchField{
+    /* border: 2px solid yellow; */
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 30%;
+    padding: 1% 1%;
+}
+.btns{
+    position: relative;
+    height: 100%;
+    display: flex;
+    width: 70%;
+    padding: 1% 1%;
+    justify-content: space-around;
+}
+.search input{
+    margin-top: 1%;
+    margin-right: 1%;
+    padding: 0.5% 0.5%;
+    width: 100%;
+}
+.search label{
+    margin-top: 1%;
+    margin-right: 1%;
+}
+.btn{
+    background-color:rgb(7, 73, 139) ;
+}
+.tableClass{
+    /* border: 2px solid yellow; */
+    height: 100%;
+    padding: 1% 5% ;
+    overflow-y: auto;
+
+}
+.books-table{
+    width: 100%;
+    margin-top: 1%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+th {
+    background-color: rgb(7, 73, 139);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+tr:nth-child(even){
+    background-color:rgb(242, 242, 242);
+}
+
+th , td {
+    padding: 0.5% 1%;
+}
+@media screen and (max-width:700px){
+    .search{
+        flex-direction: column;
+        height: 25%;
+    }
+    .searchField{
+        width: 70%;
+    }
+    .btns{
+        width: 100%;
+    }
+}
+@media screen and (max-width:485px){
+    .btn{
+        padding: 0.5% 2%;
+    }
+    .searchField{
+        width: 100%;
+    }
+}

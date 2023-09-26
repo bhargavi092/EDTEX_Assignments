@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    width: 25vw;
+    min-width: fit-content;
+    border: 1px solid rgb(84, 87, 90);
+    background-color:rgb(241, 245, 251);
+    padding: 1% 0%;
+    border-radius: 3%;
+}
+select,input{
+    width: 20vw;
+    border-radius: 2px;
+    border: none;
+}
+#title{
+    font-weight: 500;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+}
+.error-message{
+    color: rgb(174, 1, 1);
+    height: 5vh;
+    margin: -1% 0% -3% 0%;
+    font-size: medium;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#message{
+    margin-top: -8%;
+    margin-bottom: -1%;
+}

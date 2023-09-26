@@ -1,0 +1,23 @@
+<div class="container">
+    <p *ngIf="!allLeaves.length" id="message">No Data</p>
+    <table *ngIf="allLeaves.length" class="table">
+        <tr>
+            <th>Employee Name</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Reason</th>
+            <th>Manager Reason</th>
+            <th>Status</th>
+        </tr>
+        <tr [ngClass]="e? 'even' : 'odd'" *ngFor="let leave of allLeaves;let e=even;let o=odd">
+            <td>{{leave.name | titlecase}}</td>
+            <td>{{leave.type | titlecase}}</td>
+            <td>{{leave.startDate | date:'medium'}}</td>
+            <td>{{leave.endDate | date:'medium'}}</td>
+            <td id="reason">{{leave.reason ? leave.reason  : "-" }}</td>
+            <td>{{leave.managerReason}}</td>
+            <td>{{leave.status | titlecase}}</td>
+        </tr>
+    </table>
+</div>

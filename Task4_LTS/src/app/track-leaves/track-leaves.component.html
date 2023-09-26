@@ -1,0 +1,58 @@
+<div class="container">
+  <!-- <p *ngIf="!currentUser.leaves.length" id="message">No Data</p> -->
+  <p *ngIf="!leaves.length" id="message">No Data</p>
+
+  <!-- <table class="table" *ngIf="currentUser.leaves.length"> -->
+    <table class="table" *ngIf="leaves.length > 0">
+    <tr>
+      <th>Leave Type</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Status</th>
+      <th>Manager Message</th>
+      <th>Actions</th>
+    </tr>
+    <!-- <tr
+      [ngClass]="e ? 'even' : 'odd'"
+      *ngFor="let leave of currentUser.leaves; let e = even; let o = odd"
+    > -->
+    <tr
+      [ngClass]="e ? 'even' : 'odd'"
+      *ngFor="let leave of leaves; let e = even; let o = odd"
+    >
+      <td>{{ leave.type | titlecase }}</td>
+      <td>{{ leave.startDate | date : "medium" }}</td>
+      <td>{{ leave.endDate | date : "medium" }}</td>
+      <td
+        [ngClass]="
+          leave.status !== 'Pending'
+            ? leave.status === 'Accepted'
+              ? 'accepted'
+              : 'rejected'
+            : 'pending'
+        "
+      >
+        {{ leave.status | titlecase }}
+      </td>
+      <td>
+        {{
+          leave.status !== "Pending"
+            ? (leave.managerReason
+              ? leave.managerReason
+              : "Reason not specified")
+            : "Not yet responded"
+        }}
+      </td>
+      <td id="action">
+        <a
+          [routerLink]="['../edit-leave', leave.id]"
+          [queryParams]="{ startDate: leave.startDate, endDate: leave.endDate }"
+          *ngIf="leave.status === 'Pending'"
+          ><fa-icon [icon]="editIcon" id="edit"></fa-icon></a>
+          <button (click)="delete(leave)" *ngIf="leave.status === 'Pending'">
+          <fa-icon [icon]="deleteIcon" id="delete"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

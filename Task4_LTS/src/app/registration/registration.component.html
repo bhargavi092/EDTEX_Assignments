@@ -1,0 +1,23 @@
+<div class="container">
+    <form #registrationForm="ngForm" (ngSubmit)="onRegister()">
+        <p id="title">Registration</p>
+        <p *ngIf="message" id="message">{{message}}</p>
+        <select name="role" class="form-control" [(ngModel)]="user.role">
+            <option value="employee">Employee</option>
+            <option value="manager">Manager</option>
+        </select>
+        <input type="text" name="name" placeholder="Name" class="form-control" [(ngModel)]="user.name" required #name="ngModel">
+        <p *ngIf="name.errors?.['required'] && name.dirty" class="error-message">Name is Required</p>
+        <input type="text" name="mobile" placeholder="Mobile Number" class="form-control" [(ngModel)]="user.phone" required pattern="^[0-9]{10}" maxlength="10" #phone="ngModel">
+        <p *ngIf="phone.errors?.['required'] && phone.dirty" class="error-message">Phone Number is Required</p>
+        <p *ngIf="phone.errors?.['pattern'] && phone.dirty" class="error-message">Phone Number must be 10 digits</p>
+        <input type="text" name="email" placeholder="Email" class="form-control" [(ngModel)]="user.email" required pattern="^[a-z0-9+._-]+@[a-z]+[.][a-z]{2,3}" #email="ngModel">
+        <p *ngIf="email.errors?.['required'] && email.dirty" class="error-message">Email is Required</p>
+        <p *ngIf="email.errors?.['pattern'] && email.touched" class="error-message">Email is Incorrect</p>
+        <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="user.password" required #password="ngModel" minlength="6">
+        <p *ngIf="password.errors?.['required'] && password.dirty" class="error-message">Password is Required</p>
+        <p *ngIf="password.errors?.['minlength'] && password.dirty" class="error-message">Password must be 6 characters long</p>
+        <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-secondary">Register</button>
+        <p>Already had an Account ? <a routerLink="/login">Login</a></p>
+    </form>
+</div>

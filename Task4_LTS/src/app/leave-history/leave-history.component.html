@@ -1,0 +1,10 @@
+<div class="container">
+  <p id="welcome">Welcome {{currentUser.name | titlecase}}</p>
+  <div class="details">
+    <p style="font-weight:500 ;">Total Number of Leaves for Employee : {{currentUser.numberOfLeaves}}</p>
+    <p>Accepted Leaves : {{AcceptedLeaves.length}}</p>
+    <p>Rejected Leaves : {{RejectedLeaves.length}}</p>
+    <p>Pending Leaves : {{PendingLeaves.length}}</p>
+    <p>Remaining Leaves : {{currentUser.numberOfLeaves -  (AcceptedLeaves.length + PendingLeaves.length)}}</p>
+  </div>
+</div>
