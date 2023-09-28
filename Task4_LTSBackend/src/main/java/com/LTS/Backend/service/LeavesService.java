@@ -83,13 +83,11 @@ public class LeavesService {
         System.out.println( updatedLeave.getLeaveId());
 
         return leavesRepository.save(updatedLeave);
-//
     }
 
     public String getUserNameByUserId(Long userId) {
         User user = userRepository.findById(userId).orElse(null);
         return user != null ? user.getName() : null;
     }
-
 
 }

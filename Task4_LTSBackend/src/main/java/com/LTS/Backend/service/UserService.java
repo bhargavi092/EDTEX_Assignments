@@ -32,11 +32,13 @@ public class UserService {
 
 
     public List<User> updateLeaveCount(int updatedLeaveCount){
-        List<User> employees = userRepository.findByRole("employee");
 
-        for(User employee: employees){
-            employee.setNumberOfLeaves(updatedLeaveCount);
-        }
-        return  userRepository.saveAll(employees);
+      List<User> users = userRepository.findAll();
+      for(User user: users){
+        user.setNumberOfLeaves(updatedLeaveCount);
+      }
+
+      return userRepository.saveAll(users);
+//
     }
 }

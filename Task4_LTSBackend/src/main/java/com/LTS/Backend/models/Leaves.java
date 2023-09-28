@@ -23,7 +23,6 @@ import java.time.LocalDate;
 
 @ToString
 @Entity
-
 @Table(name = "leaves")
 public class Leaves {
     @Id
@@ -45,7 +44,7 @@ public class Leaves {
 
 //    @Column(name = "approved_manager_id")
 //    private Long approvedManagerId;
-
+    private String name;
     private String status;
     private String type;
     private String  startDate;

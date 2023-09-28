@@ -61,7 +61,7 @@ class UserControllerTest {
 
 
     @Test
-    @Disabled
+//    @Disabled
     public void loginWithValidCredentials() {
         UserLoginRequest userLoginRequest = new UserLoginRequest();
         userLoginRequest.setEmail("blue@gmail.com");
@@ -73,7 +73,7 @@ class UserControllerTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     public void loginWithInvalidCredentials() {
         UserLoginRequest userLoginRequest = new UserLoginRequest();
         userLoginRequest.setEmail("blue@gmail.com");
@@ -85,7 +85,7 @@ class UserControllerTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     public void loginWithNonexistentUser() {
         UserLoginRequest userLoginRequest = new UserLoginRequest();
         userLoginRequest.setEmail("no@gmail.com");
@@ -96,5 +96,17 @@ class UserControllerTest {
         assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
     }
 
+
+  @Test
+  public void updateAllEmployeesLeaveCount() {
+    int updatedLeaveCount = 20;
+
+    ResponseEntity<?> response = restTemplate.postForEntity(
+      "/manager/settings/" + updatedLeaveCount,
+      null,
+      Object.class);
+
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+  }
 
 }

@@ -24,13 +24,14 @@ public class LeavesController {
     private UserRepository userRepository;
 
     @PostMapping("/employee/apply-leave/{email}")
-    public ResponseEntity<?> applyLeave(@PathVariable String email ,@RequestBody Leaves leave){
+    public ResponseEntity<?> applyLeave(@PathVariable String email,@RequestBody Leaves leave){
         try{
-
-            User user = userRepository.findByEmail(email);
+          System.out.println("UserName: " + leave.getName());
+          User user = userRepository.findByEmail(email);
             if( user!= null){
                 Long userId = user.getId();
                 leave.setId(userId);
+
                 Leaves appliedLeave = leavesService.applyLeave(leave);
                 return ResponseEntity.ok(appliedLeave);
             }
@@ -72,7 +73,7 @@ public class LeavesController {
     @GetMapping("/manager/new-requests")
     public ResponseEntity<?> getAllPendingLeaves(){
         List<Leaves> pendingLeaves = leavesService.getAllPendingLeaves();
-
+//        System.out.println("at new-request"+pendingLeaves);
         if(!pendingLeaves.isEmpty()){
             return ResponseEntity.ok(pendingLeaves);
         }

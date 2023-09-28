@@ -51,7 +51,7 @@ public class UserController {
         List<User> users = userService.updateLeaveCount(updatedLeaveCount);
 
         if(!users.isEmpty()){
-            return ResponseEntity.ok("success");
+            return new ResponseEntity<>(HttpStatus.OK);
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
