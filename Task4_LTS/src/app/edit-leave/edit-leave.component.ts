@@ -76,6 +76,8 @@ export class EditLeaveComponent implements OnInit {
       .subscribe(
         (response) => {
           console.log('Leave updated successfully');
+          window.location.href = 'http://localhost:4200/employee/track-leaves';
+
         },
         (error) => {
           console.error('Error updating leave:', error);

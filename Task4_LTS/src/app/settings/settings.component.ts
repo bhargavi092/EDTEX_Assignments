@@ -37,13 +37,13 @@ export class SettingsComponent implements OnInit {
     this.httpClient.post(`http://localhost:8080/manager/settings/${updatedLeaveCount}`,null).subscribe(
       (response) => {
         console.log('Leave count updated successfully:', response);
+        const LeaveCount = this.numberOfLeaves.toString();
+
+        localStorage.setItem('numberOfLeaves',LeaveCount)
+        window.location.href = 'http://localhost:4200/manager/new-requests';
       },
       (error) => {
-        if (error.status === 200) {
-    console.log('Leave count updated successfully');
-  } else {
-    console.error('Error updating leave count:', error);
-  }
+          console.error('Error updating leave count:', error);
       }
     );
 

@@ -106,6 +106,9 @@ export class ApplyLeaveComponent implements OnInit {
   // }
 
   onApplyLeave() {
+    console.log("applyLeave",this.currentUser.email,this.currentUser.name)
+    console.log(this.leave)
+    this.leave.name= this.currentUser.name
     this.httpClient.post<any>(`http://localhost:8080/employee/apply-leave/${this.currentUser.email}`, this.leave).subscribe(
       (response) => {
         if (response) {
@@ -142,6 +145,8 @@ export class ApplyLeaveComponent implements OnInit {
     }else{
       window.location.href='http://localhost:4200/login'
     }
+
+    console.log(this.currentUser.name)
     //getting the leaves data from the local storage
     const leavesData = localStorage.getItem('leaves');
     if (leavesData) {

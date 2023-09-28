@@ -41,7 +41,7 @@ export class NewRequestsComponent implements OnInit {
   }
   
   users: UserWithId[] = [];
-  pendingLeaves: Leave[] = [];
+  pendingLeaves:Leave[]= [] ;
   leaves: Leave[] = [];
   managerMessage: string = '';
   acceptIcon = faCheck;
@@ -54,17 +54,22 @@ export class NewRequestsComponent implements OnInit {
     this.fetchPendingLeaves();
     
   }
+  fetchUserName(){
+    console.log("username")
+  }
   fetchPendingLeaves(){
       
     this.httpClient.get<Leave[]>('http://localhost:8080/manager/new-requests').subscribe(
       (response) => {
         // this.pendingLeaves = response;
         this.pendingLeaves = response.map((leave) => {
-          // Get the user ID from the leave
           const userId = leave.id;
+          
+          this.fetchUserName()
           
           return leave;
         });
+        console.log(this.pendingLeaves)
       },
       (error) => {
         console.error('Error fetching pending leaves:', error);
